@@ -4,9 +4,6 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "engine": {
-    "node": ">=16"
-   },
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
@@ -23,5 +20,8 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.0",
     "morgan": "^1.10.0"
-  }
+  },
+  "engine": {
+    "node": ">=16"
+   }
 }
