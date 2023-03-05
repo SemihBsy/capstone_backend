@@ -68,6 +68,6 @@ This is a Twitter clone built with ReactJS, Redux, NodeJS, Express, Firebase and
 
 ### Link to Project
 
-[Backend Deployed Project Page](https://blog-app-backend-wimx.onrender.com)  
+[Backend Deployed Project Page](https://zweeter-backend.onrender.com)  
 [Frontend Deployed Project Page](https://super-sfogliatella-4f8028.netlify.app/)
 
