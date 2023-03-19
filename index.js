@@ -2,7 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 
-import userRoutes from './routes/users.js'
+import userRoutes from "./routes/users.js";
+import authRoutes from "./routes/auths.js";
 
 const app = express();
 dotenv.config();
@@ -23,7 +24,9 @@ mongoose.connection
 .on("close", () => console.log("Disconnected from mongodb"))
 .on("error", (error) => console.log(error))
 
+app.use(express.json());
 app.use("/api/users", userRoutes);
+app.use("/api/auth", authRoutes);
 
 const PORT =  process.env.PORT ?? 8000
 app.listen(PORT, () => {
