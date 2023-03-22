@@ -17,11 +17,11 @@ export const signup = async (req, res, next) => {
         const { password, ...othersData } = newUser._doc;
 
         res
-          .cookie('access_token', token, {
+        .cookie('access_token', token, {
             httpOnly: true,
-          })
-          .status(200)
-          .json(othersData);
+        })
+        .status(200)
+        .json(othersData);
     } catch (err) {
         next(err);
     }
@@ -30,7 +30,7 @@ export const signup = async (req, res, next) => {
 
 export const signin = async (req, res, next) => {
     try {
-        const user = await User.findOne({ username: req.body.username })
+        const user = await User.findOne({ username: req.body.username });
 
         if(!user) return next(handleError(404, "User not found"));
 
@@ -42,9 +42,11 @@ export const signin = async (req, res, next) => {
         const { password, ...othersData } = user._doc;
 
         res
-          .cookie('access_token', token, { httpOnly: true })
-          .status(200)
-          .json(othersData);
+        .cookie("access_token", token, { 
+            httpOnly: true 
+        })
+        .status(200)
+        .json(othersData);
     } catch (err) {
         next(err);
     }
