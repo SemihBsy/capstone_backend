@@ -50,13 +50,12 @@ export const getAllTweets = async (req, res, next) => {
         return Tweet.find({ userId: followerId });
       })
     );
-    
+
     res.status(200).json(userTweets.concat(...followersTweets));
   } catch (err) {
     handleError(500, err);
   }
 };
-
 
 export const getUserTweets = async (req, res, next) => {
   try {

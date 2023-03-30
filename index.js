@@ -14,17 +14,17 @@ dotenv.config();
 const MONGO = process.env.MONGO;
 
 // Connect to the database
-mongoose.set('strictQuery', false);
+mongoose.set("strictQuery", false);
 mongoose.connect(MONGO, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
 });
 
 // Connection message handler
 mongoose.connection
-.on("open", () => console.log("Connected to mongodb"))
-.on("close", () => console.log("Disconnected from mongodb"))
-.on("error", (error) => console.log(error))
+  .on("open", () => console.log("Connected to mongodb"))
+  .on("close", () => console.log("Disconnected from mongodb"))
+  .on("error", (error) => console.log(error));
 
 app.use(express.json());
 app.use(cookieParser());
@@ -32,7 +32,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/tweets", tweetRoutes);
 
-const PORT =  process.env.PORT ?? 8000
+const PORT = process.env.PORT ?? 8000;
 app.listen(PORT, () => {
-    console.log(`Listening on PORT ${PORT}`);
+  console.log(`Listening on PORT ${PORT}`);
 });

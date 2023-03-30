@@ -1,12 +1,12 @@
 import express from "express";
 import { verifyToken } from "../verifyToken.js";
-import { 
-    createTweet, 
-    deleteTweet, 
-    likeorDislike, 
-    getAllTweets, 
-    getUserTweets,
-    getExploreTweets, 
+import {
+  createTweet,
+  deleteTweet,
+  likeorDislike,
+  getAllTweets,
+  getUserTweets,
+  getExploreTweets,
 } from "../controllers/tweet.js";
 
 const router = express.Router();
@@ -29,8 +29,4 @@ router.get("/user/all/:id", getUserTweets);
 // Explore
 router.get("/explore", getExploreTweets);
 
-
 export default router;
-
-
-
