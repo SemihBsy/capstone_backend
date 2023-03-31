@@ -26,6 +26,7 @@ mongoose.connection
   .on("close", () => console.log("Disconnected from mongodb"))
   .on("error", (error) => console.log(error));
 
+app.use(cors());  
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/users", userRoutes);
