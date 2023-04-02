@@ -15,7 +15,7 @@ export const signup = async (req, res, next) => {
 
     const { password, ...othersData } = newUser._doc;
     res
-      .cookie("access_token", token, { httpOnly: true })
+      .cookie("access_token", token, { httpOnly: true, secure: true, sameSite: 'none' })
       .status(200)
       .json(othersData);
   } catch (err) {
@@ -38,7 +38,7 @@ export const signin = async (req, res, next) => {
     const { password, ...othersData } = user._doc;
 
     res
-      .cookie("access_token", token, { httpOnly: true })
+      .cookie("access_token", token, { httpOnly: true, secure: true, sameSite: 'none' })
       .status(200)
       .json(othersData);
   } catch (err) {
